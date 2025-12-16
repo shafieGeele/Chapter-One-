@@ -127,7 +127,6 @@ import "./tabButtons.css"
 
 function TabButton({children, isSelected, ...props }){
 
-console.log("TabButtons");
     return (
 
            <button className={isSelected ? "active" : null} {...props}>{children}</button>
