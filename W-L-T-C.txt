@@ -11,7 +11,6 @@
 📝 Word    
    → Random words (dynamic selection via function) [No state needed, can use array + random index]  
    Example:
-   ```js
    const words = ["Fundamental", "Crucial", "Core"];
    function getRandomWord() {
        const randomIndex = Math.floor(Math.random() * words.length);
