@@ -1,0 +1,116 @@
+
+🔹 1️⃣ Section Component
+
+Name: Section → Wrapper / Layout Component
+
+Purpose:
+
+Wraps a section of the page
+
+Adds a title (h2)
+
+Renders any nested content (children)
+
+Forwards extra props (id, className, etc.) using ...attr
+
+Pattern:
+
+Reusable wrapper
+
+Props forwarding (...attr)
+
+Children composition
+
+Example Usage:
+
+
+
+function Section ({title, children, ...props}){
+    return <section {...props}>
+        <h2>{title}</h2>
+        {children}
+    </section>
+}
+
+export default Section
+
+
+
+
+-- and accepts as :
+
+    <Section id="examples" title="EXAMPLES">
+
+            - use here whatever you want since its for the childeren       
+  
+
+            </Section>
+        
+
+-----------------------------------------------------------------------------
+
+
+
+
+🔹 2️⃣ Tabs Component
+
+Name: Tabs → Slot / Container for Buttons
+
+Purpose:
+
+Wraps tab buttons (buttons prop) and tab content (children)
+
+Parent controls what is rendered for buttons and content
+
+Flexible layout via ButtonsContainer prop (default "menu")
+
+Pattern:
+
+Component injection / dynamic rendering
+
+Composition over hardcoding
+
+Safe default container
+
+Example Usage:
+
+
+
+            <Section id="examples" title="EXAMPLES">
+
+- since here is fore the children of section, lets use it for our Tabs
+
+
+                <Tabs  // already has the type of container i.e menu
+                
+                buttons={
+                    <>
+                         
+               <TabButton isSelected={selectTopic === "components"} onClick={()=>handleSelect("components")}>COMPOENTS</TabButton>
+                <TabButton isSelected={selectTopic === "jsx"} onClick={()=>handleSelect("jsx")}>JSX</TabButton>
+                <TabButton isSelected={selectTopic === "props"} onClick={()=>handleSelect("props")}>PROPS</TabButton>
+                <TabButton isSelected={selectTopic === "state"} onClick={()=>handleSelect("state")}>STATE</TabButton>                    
+                    
+                    </>
+                } >
+
+// this is the children of the tabs
+                             
+                <div id="tab-content">
+
+                     {tabContent}
+
+
+
+                </div>
+        
+
+                </Tabs>
+
+               
+  
+
+            </Section>
+     
+
+
